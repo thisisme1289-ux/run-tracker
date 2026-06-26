@@ -1,0 +1,45 @@
+<svg width="900" height="720" viewBox="0 0 900 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="720" rx="28" fill="#111820"/>
+  <path d="M0 472C126 398 220 444 341 345C469 241 574 205 900 184V720H0V472Z" fill="#102B20"/>
+  <path d="M0 0H900V210C656 224 517 270 369 368C219 468 95 422 0 494V0Z" fill="#13243A"/>
+  <g opacity="0.13" stroke="#FFFFFF">
+    <path d="M80 0V720M180 0V720M280 0V720M380 0V720M480 0V720M580 0V720M680 0V720M780 0V720"/>
+    <path d="M0 90H900M0 190H900M0 290H900M0 390H900M0 490H900M0 590H900"/>
+  </g>
+  <rect x="300" y="54" width="300" height="612" rx="48" fill="#070A0D"/>
+  <rect x="318" y="74" width="264" height="572" rx="36" fill="#0B0F14"/>
+  <rect x="338" y="102" width="224" height="260" rx="22" fill="#101923"/>
+  <path d="M351 282C383 237 419 287 449 233C478 182 521 197 550 137" stroke="#39FF88" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M351 282C383 237 419 287 449 233C478 182 521 197 550 137" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="351" cy="282" r="10" fill="#FFFFFF"/>
+  <circle cx="550" cy="137" r="10" fill="#F05F57"/>
+  <rect x="356" y="122" width="188" height="42" rx="21" fill="#07100C" stroke="#1D3B2D"/>
+  <circle cx="380" cy="143" r="6" fill="#39FF88"/>
+  <text x="396" y="148" fill="#F7FFF9" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">RECORDING</text>
+  <text x="344" y="408" fill="#8EA0A9" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800">DISTANCE</text>
+  <text x="344" y="478" fill="#39FF88" font-family="Inter, Arial, sans-serif" font-size="66" font-weight="900">3.42</text>
+  <text x="509" y="472" fill="#8EA0A9" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">km</text>
+  <rect x="344" y="516" width="60" height="48" rx="12" fill="#121B23"/>
+  <rect x="420" y="516" width="60" height="48" rx="12" fill="#121B23"/>
+  <rect x="496" y="516" width="60" height="48" rx="12" fill="#121B23"/>
+  <text x="359" y="535" fill="#8EA0A9" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="800">TIME</text>
+  <text x="352" y="553" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800">22:14</text>
+  <text x="435" y="535" fill="#8EA0A9" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="800">PACE</text>
+  <text x="429" y="553" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800">6:29</text>
+  <text x="510" y="535" fill="#8EA0A9" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="800">GPS</text>
+  <text x="512" y="553" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800">HIGH</text>
+  <rect x="366" y="592" width="168" height="34" rx="17" fill="#39FF88"/>
+  <text x="406" y="614" fill="#07100C" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="900">HOLD TO FINISH</text>
+  <g>
+    <rect x="62" y="92" width="190" height="116" rx="18" fill="#0D151C" stroke="#24313A"/>
+    <text x="86" y="126" fill="#39FF88" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="900">Offline fallback</text>
+    <text x="86" y="156" fill="#D8E3DF" font-family="Inter, Arial, sans-serif" font-size="13">Route canvas keeps</text>
+    <text x="86" y="176" fill="#D8E3DF" font-family="Inter, Arial, sans-serif" font-size="13">drawing without tiles.</text>
+  </g>
+  <g>
+    <rect x="646" y="500" width="190" height="116" rx="18" fill="#0D151C" stroke="#24313A"/>
+    <text x="670" y="534" fill="#69C8FF" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="900">SQLite history</text>
+    <text x="670" y="564" fill="#D8E3DF" font-family="Inter, Arial, sans-serif" font-size="13">Points persist during</text>
+    <text x="670" y="584" fill="#D8E3DF" font-family="Inter, Arial, sans-serif" font-size="13">the workout.</text>
+  </g>
+</svg>

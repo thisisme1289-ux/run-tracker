@@ -1,0 +1,13 @@
+<svg width="220" height="64" viewBox="0 0 220 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Run Tracker logo</title>
+  <desc id="desc">A route line, location pin, and the Run Tracker wordmark.</desc>
+  <rect width="64" height="64" rx="14" fill="#0B0F14"/>
+  <path d="M11 42C18 32 26 45 33 34C40 23 49 25 55 15" stroke="#39FF88" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M11 42C18 32 26 45 33 34C40 23 49 25 55 15" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M49 13L58 11L55.5 20L49 13Z" fill="#39FF88"/>
+  <path d="M23 23C23 16.9 27.9 12 34 12C40.1 12 45 16.9 45 23C45 31.4 34 42 34 42C34 42 23 31.4 23 23Z" fill="#39FF88"/>
+  <circle cx="34" cy="23" r="5.8" fill="#0B0F14"/>
+  <circle cx="34" cy="23" r="2.4" fill="white"/>
+  <text x="78" y="29" fill="#F6FAF8" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Run Tracker</text>
+  <text x="78" y="48" fill="#92A2AA" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600">GPS workouts that survive real life</text>
+</svg>

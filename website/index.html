@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Run Tracker is a native Android GPS running and walking tracker with foreground service recording, offline route fallback, SQLite history, and real-world interruption handling."
+    />
+    <title>Run Tracker - GPS Running & Walking Tracker</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Run Tracker home">
+        <img src="assets/logo.svg" alt="Run Tracker" />
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#reliability">Reliability</a>
+        <a href="#download">Download</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Native Android GPS tracker</p>
+          <h1>Run Tracker</h1>
+          <p class="lede">
+            A focused running and walking tracker that records your route, pace,
+            distance, and history while handling the messy parts: lock screens,
+            backgrounding, missing map tiles, and interrupted sessions.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="download/run-tracker-debug.apk" download>
+              Download APK
+            </a>
+            <a class="button secondary" href="#how-it-works">Explore the app</a>
+          </div>
+          <dl class="quick-stats" aria-label="App highlights">
+            <div>
+              <dt>GPS</dt>
+              <dd>Foreground service</dd>
+            </div>
+            <div>
+              <dt>Storage</dt>
+              <dd>SQLite history</dd>
+            </div>
+            <div>
+              <dt>Maps</dt>
+              <dd>OSM + offline route canvas</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="hero-visual" aria-label="Run Tracker app preview">
+          <img src="assets/app-preview.svg" alt="Run Tracker active session preview" />
+        </div>
+      </section>
+
+      <section id="how-it-works" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Workout flow</p>
+          <h2>Designed around what happens before, during, and after a run.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="icon">01</span>
+            <h3>Load your location first</h3>
+            <p>
+              The app can preload your current position before you start. If Android
+              Location is off, it opens the device settings instead of silently failing.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="icon">02</span>
+            <h3>Start a real tracking service</h3>
+            <p>
+              Tracking runs in a native Android foreground service, so the timer and
+              GPS listener are not tied to the visible screen staying open.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="icon">03</span>
+            <h3>Persist points while moving</h3>
+            <p>
+              Accepted GPS points are written during the session, not only at the end.
+              That makes crash recovery and mid-session reopen behavior more honest.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="icon">04</span>
+            <h3>Review the workout later</h3>
+            <p>
+              Completed sessions appear in history with distance, duration, pace,
+              route preview, detail stats, and a route-safe fallback view.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="reliability" class="split-section">
+        <div>
+          <p class="eyebrow">Reliability decisions</p>
+          <h2>Built for real phone behavior, not just a happy-path demo.</h2>
+          <p>
+            The tracker filters noisy points, rejects implausible GPS jumps, avoids
+            saving zero-data sessions, and marks abandoned active rows as incomplete
+            instead of pretending a stale workout is still live.
+          </p>
+        </div>
+        <div class="check-list" aria-label="Reliability features">
+          <div>
+            <strong>Accuracy filtering</strong>
+            <span>Rejects points worse than 20 meters.</span>
+          </div>
+          <div>
+            <strong>Speed-jump guard</strong>
+            <span>Rejects single-point jumps above 15 m/s.</span>
+          </div>
+          <div>
+            <strong>Offline map fallback</strong>
+            <span>Draws your route on a canvas when map tiles are unavailable.</span>
+          </div>
+          <div>
+            <strong>History cleanup</strong>
+            <span>Does not save empty workouts with no persisted route data.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">What you see</p>
+          <h2>Clear screens for the moments that matter.</h2>
+        </div>
+        <div class="screen-grid">
+          <article>
+            <div class="mini-screen location-screen">
+              <span class="pill">Location Ready</span>
+              <div class="pin"></div>
+              <p>Preload your position</p>
+            </div>
+            <h3>Before the workout</h3>
+            <p>Load location and confirm the map area before recording starts.</p>
+          </article>
+          <article>
+            <div class="mini-screen active-screen">
+              <span class="pill">Recording</span>
+              <strong>3.42 km</strong>
+              <small>22:14 - 6:29 /km</small>
+            </div>
+            <h3>During the workout</h3>
+            <p>Distance, time, pace, and route update while the service records.</p>
+          </article>
+          <article>
+            <div class="mini-screen history-screen">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h3>After the workout</h3>
+            <p>Saved sessions appear in history with route previews and details.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="download" class="download-section">
+        <div>
+          <p class="eyebrow">Install build</p>
+          <h2>Download the Android APK</h2>
+          <p>
+            This is a debug APK for direct testing on your Android device. Install it
+            manually, grant location permission, then use Get Location before Start.
+          </p>
+        </div>
+        <a class="button primary download-button" href="download/run-tracker-debug.apk" download>
+          Download Run Tracker APK
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <img src="assets/favicon.svg" alt="" />
+      <span>Run Tracker - native Android GPS workouts.</span>
+    </footer>
+  </body>
+</html>
