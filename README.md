@@ -1,18 +1,23 @@
-# Run Tracker
+# Run Tracker Website
 
-Personal Android running/walking tracker focused on resilient foreground-service GPS recording.
+This repository publishes the Run Tracker landing page and APK download.
 
-## Requirements
+## Files
 
-- Android Studio
-- Android SDK matching the project compile SDK
-- A physical Android device for real background GPS testing
+- `index.html` - website entry page for GitHub Pages
+- `styles.css` - responsive landing-page styling
+- `assets/` - logo, favicon, and app preview artwork
+- `download/run-tracker-debug.apk` - Android APK download
 
-## Run Locally
+## GitHub Pages
 
-1. Open this directory in Android Studio.
-2. Let Android Studio sync the Gradle project.
-3. Run the `app` configuration on an emulator or physical Android device.
-4. Grant foreground location, background location, notification, and battery optimization permissions when prompted.
+Enable GitHub Pages from the repository settings:
 
-No map account, cloud key, or Google service setup is required. The app shows OpenStreetMap tiles and draws routes from recorded GPS points.
+1. Go to **Settings > Pages**.
+2. Set **Source** to `Deploy from a branch`.
+3. Select branch `main`.
+4. Select folder `/root`.
+
+After GitHub finishes publishing, the website should be available at:
+
+`https://thisisme1289-ux.github.io/run-tracker/`

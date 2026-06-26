@@ -1,6 +1,0 @@
-{
-  "name": "Run Tracker",
-  "description": "An Android running and walking tracker with background GPS service, real-time stats, OpenStreetMap display, and persistent SQLite history.",
-  "requestFramePermissions": [],
-  "majorCapabilities": []
-}
