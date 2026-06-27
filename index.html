@@ -55,7 +55,10 @@
           </dl>
         </div>
         <div class="hero-visual" aria-label="Run Tracker app preview">
-          <img src="assets/app-preview.svg" alt="Run Tracker active session preview" />
+          <div class="phone-frame hero-phone">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <img src="assets/app-preview.svg" alt="Run Tracker active session preview" />
+          </div>
         </div>
       </section>
 
@@ -110,23 +113,92 @@
             instead of pretending a stale workout is still live.
           </p>
         </div>
-        <div class="check-list" aria-label="Reliability features">
-          <div>
+        <div class="reliability-grid" aria-label="Reliability features">
+          <article class="reliability-card">
+            <span class="reliability-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <circle cx="12" cy="12" r="7"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+              </svg>
+            </span>
             <strong>Accuracy filtering</strong>
             <span>Rejects points worse than 20 meters.</span>
-          </div>
-          <div>
+          </article>
+          <article class="reliability-card">
+            <span class="reliability-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <path d="M4 15a8 8 0 0 1 16 0"></path>
+                <path d="M6 19h12"></path>
+                <path d="M13 4l-3 8h4l-3 8"></path>
+              </svg>
+            </span>
             <strong>Speed-jump guard</strong>
             <span>Rejects single-point jumps above 15 m/s.</span>
-          </div>
-          <div>
+          </article>
+          <article class="reliability-card">
+            <span class="reliability-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <path d="M3 6l5-2 8 3 5-2v13l-5 2-8-3-5 2z"></path>
+                <path d="M8 4v13M16 7v13"></path>
+                <path d="M5 20L20 5"></path>
+              </svg>
+            </span>
             <strong>Offline map fallback</strong>
             <span>Draws your route on a canvas when map tiles are unavailable.</span>
-          </div>
-          <div>
+          </article>
+          <article class="reliability-card">
+            <span class="reliability-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="img">
+                <path d="M4 7h9M10 11v6M14 11v6M6 7l1 13h8l.5-6.5M9 7V4h4v3"></path>
+                <path d="M15 18l2 2 4-5"></path>
+              </svg>
+            </span>
             <strong>History cleanup</strong>
             <span>Does not save empty workouts with no persisted route data.</span>
-          </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="section-heading">
+          <p class="eyebrow">Common questions</p>
+          <h2>Plain answers before you install.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Why is this a debug APK and not on the Play Store?</summary>
+            <p>
+              This build is meant for direct testing before a store release. It keeps
+              distribution simple while the tracking behavior, route storage, and
+              interruption handling are still being validated.
+            </p>
+          </details>
+          <details>
+            <summary>What permissions does the app need and why?</summary>
+            <p>
+              The manifest requests location permissions for GPS tracking, foreground
+              service and notification permissions so tracking can keep running visibly,
+              wake lock support for active sessions, and network access for OpenStreetMap
+              tiles. No account or map key is used.
+            </p>
+          </details>
+          <details>
+            <summary>Does tracking keep running if I lock my phone or switch apps?</summary>
+            <p>
+              Tracking runs in a native Android foreground service, so it is not tied to
+              the screen being open. Android can still apply device-specific battery
+              limits, but the app is built around the standard long-running tracking path.
+            </p>
+          </details>
+          <details>
+            <summary>What happens to a workout if the app crashes mid-session?</summary>
+            <p>
+              Accepted GPS points are persisted while the session is moving, not only
+              when you stop. On cleanup, abandoned active rows are marked incomplete
+              instead of being treated as a finished workout.
+            </p>
+          </details>
         </div>
       </section>
 
@@ -137,28 +209,37 @@
         </div>
         <div class="screen-grid">
           <article>
-            <div class="mini-screen location-screen">
-              <span class="pill">Location Ready</span>
-              <div class="pin"></div>
-              <p>Preload your position</p>
+            <div class="phone-frame mini-phone">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="mini-screen location-screen">
+                <span class="pill">Location Ready</span>
+                <div class="pin"></div>
+                <p>Preload your position</p>
+              </div>
             </div>
             <h3>Before the workout</h3>
             <p>Load location and confirm the map area before recording starts.</p>
           </article>
           <article>
-            <div class="mini-screen active-screen">
-              <span class="pill">Recording</span>
-              <strong>3.42 km</strong>
-              <small>22:14 - 6:29 /km</small>
+            <div class="phone-frame mini-phone">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="mini-screen active-screen">
+                <span class="pill">Recording</span>
+                <strong>3.42 km</strong>
+                <small>22:14 - 6:29 /km</small>
+              </div>
             </div>
             <h3>During the workout</h3>
             <p>Distance, time, pace, and route update while the service records.</p>
           </article>
           <article>
-            <div class="mini-screen history-screen">
-              <span></span>
-              <span></span>
-              <span></span>
+            <div class="phone-frame mini-phone">
+              <div class="phone-notch" aria-hidden="true"></div>
+              <div class="mini-screen history-screen">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
             <h3>After the workout</h3>
             <p>Saved sessions appear in history with route previews and details.</p>
@@ -175,15 +256,45 @@
             manually, grant location permission, then use Get Location before Start.
           </p>
         </div>
-        <a class="button primary download-button" href="download/run-tracker-debug.apk" download>
-          Download Run Tracker APK
-        </a>
+        <div class="download-panel">
+          <dl class="build-facts" aria-label="APK build details">
+            <div>
+              <dt>Version</dt>
+              <!-- Update before publishing if app/build.gradle.kts versionName changes. -->
+              <dd>v1.0</dd>
+            </div>
+            <div>
+              <dt>File size</dt>
+              <!-- Update before publishing if download/run-tracker-debug.apk is rebuilt. -->
+              <dd>16.4 MiB</dd>
+            </div>
+            <div>
+              <dt>Permissions</dt>
+              <!-- Confirm against app/src/main/AndroidManifest.xml before publishing. -->
+              <dd>Location, service, notifications, network</dd>
+            </div>
+            <div>
+              <dt>Build trust</dt>
+              <dd>No ads · No analytics</dd>
+            </div>
+          </dl>
+          <a class="button primary download-button" href="download/run-tracker-debug.apk" download>
+            Download Run Tracker APK
+          </a>
+        </div>
       </section>
     </main>
 
     <footer>
       <img src="assets/favicon.svg" alt="" />
       <span>Run Tracker - native Android GPS workouts.</span>
+      <a href="https://thisisme1289-ux.github.io/run-tracker/">GitHub Pages</a>
+      <!-- Replace with a public repository URL if/when the source repo is published. -->
+      <a href="https://github.com/thisisme1289-ux/run-tracker">GitHub repo</a>
+      <!-- Replace this placeholder with the preferred support email or issue tracker. -->
+      <a href="mailto:feedback@example.com">Feedback</a>
+      <!-- Update version/date before publishing a new APK. -->
+      <span>v1.0 · Last updated Jun 27, 2026</span>
     </footer>
   </body>
 </html>
