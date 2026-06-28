@@ -31,7 +31,7 @@
           <p class="lede">
             A focused running and walking tracker that records your route, pace,
             distance, and history while handling the messy parts: lock screens,
-            backgrounding, missing map tiles, and interrupted sessions.
+            backgrounding, sensor drift, missing map tiles, and interrupted sessions.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="download/run-tracker-debug.apk" download>
@@ -81,7 +81,8 @@
             <h3>Start a real tracking service</h3>
             <p>
               Tracking runs in a native Android foreground service, so the timer and
-              GPS listener are not tied to the visible screen staying open.
+              GPS listener are not tied to the visible screen staying open. A watchdog
+              alarm can restart active tracking if Android stops the service.
             </p>
           </article>
           <article class="feature-card">
@@ -89,7 +90,8 @@
             <h3>Persist points while moving</h3>
             <p>
               Accepted GPS points are written during the session, not only at the end.
-              That makes crash recovery and mid-session reopen behavior more honest.
+              Motion sensors, step detection, and GPS checks help reject stationary
+              drift before points affect distance, speed, or pace.
             </p>
           </article>
           <article class="feature-card">
@@ -97,7 +99,8 @@
             <h3>Review the workout later</h3>
             <p>
               Completed sessions appear in history with distance, duration, pace,
-              route preview, detail stats, and a route-safe fallback view.
+              route preview, a centered detail popup, share/delete actions, and a
+              route-safe fallback view.
             </p>
           </article>
         </div>
@@ -108,9 +111,9 @@
           <p class="eyebrow">Reliability decisions</p>
           <h2>Built for real phone behavior, not just a happy-path demo.</h2>
           <p>
-            The tracker filters noisy points, rejects implausible GPS jumps, avoids
-            saving zero-data sessions, and marks abandoned active rows as incomplete
-            instead of pretending a stale workout is still live.
+            The tracker filters noisy points, rejects implausible GPS jumps, combines
+            motion sensors with GPS to avoid stationary drift, avoids saving zero-data
+            sessions, and recovers fresh active sessions when Android interrupts them.
           </p>
         </div>
         <div class="reliability-grid" aria-label="Reliability features">
@@ -123,7 +126,7 @@
               </svg>
             </span>
             <strong>Accuracy filtering</strong>
-            <span>Rejects points worse than 20 meters.</span>
+            <span>Rejects weak fixes and GPS jumps before they affect stats.</span>
           </article>
           <article class="reliability-card">
             <span class="reliability-icon" aria-hidden="true">
@@ -134,7 +137,7 @@
               </svg>
             </span>
             <strong>Speed-jump guard</strong>
-            <span>Rejects single-point jumps above 15 m/s.</span>
+            <span>Live speed returns to zero when the device is stationary.</span>
           </article>
           <article class="reliability-card">
             <span class="reliability-icon" aria-hidden="true">
@@ -145,7 +148,7 @@
               </svg>
             </span>
             <strong>Offline map fallback</strong>
-            <span>Draws your route on a canvas when map tiles are unavailable.</span>
+            <span>Draws route previews on a canvas when map tiles are unavailable.</span>
           </article>
           <article class="reliability-card">
             <span class="reliability-icon" aria-hidden="true">
@@ -155,7 +158,7 @@
               </svg>
             </span>
             <strong>History cleanup</strong>
-            <span>Does not save empty workouts with no persisted route data.</span>
+            <span>History details include map preview, stats, share, and delete.</span>
           </article>
         </div>
       </section>
@@ -179,8 +182,9 @@
             <p>
               The manifest requests location permissions for GPS tracking, foreground
               service and notification permissions so tracking can keep running visibly,
-              wake lock support for active sessions, and network access for OpenStreetMap
-              tiles. No account or map key is used.
+              activity recognition for motion/step detection, wake lock support for
+              active sessions, and network access for OpenStreetMap tiles. No account
+              or map key is used.
             </p>
           </details>
           <details>
@@ -188,7 +192,8 @@
             <p>
               Tracking runs in a native Android foreground service, so it is not tied to
               the screen being open. Android can still apply device-specific battery
-              limits, but the app is built around the standard long-running tracking path.
+              limits, so the app uses wake lock support and a watchdog restart path for
+              active workouts.
             </p>
           </details>
           <details>
@@ -242,7 +247,7 @@
               </div>
             </div>
             <h3>After the workout</h3>
-            <p>Saved sessions appear in history with route previews and details.</p>
+            <p>Tap a saved session to open a route preview, stats, share, and delete.</p>
           </article>
         </div>
       </section>
@@ -271,7 +276,7 @@
             <div>
               <dt>Permissions</dt>
               <!-- Confirm against app/src/main/AndroidManifest.xml before publishing. -->
-              <dd>Location, service, notifications, network</dd>
+              <dd>Location, motion, service, notifications, network</dd>
             </div>
             <div>
               <dt>Build trust</dt>
@@ -294,7 +299,7 @@
       <!-- Replace this placeholder with the preferred support email or issue tracker. -->
       <a href="mailto:feedback@example.com">Feedback</a>
       <!-- Update version/date before publishing a new APK. -->
-      <span>v1.0 · Last updated Jun 27, 2026</span>
+      <span>v1.0 - Last updated Jun 28, 2026</span>
     </footer>
   </body>
 </html>
